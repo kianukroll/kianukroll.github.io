@@ -111,7 +111,7 @@ export const cvExperience: ExperienceEntry[] = [
   },
   {
     id: 'kfw',
-    period: { en: '08/2022 — 03/2024', de: '08/2022 — 03/2024' },
+    period: { en: '08/2022 — 04/2024', de: '08/2022 — 04/2024' },
     role: {
       en: 'Computer Science Student (Dual Program, IT Operations)',
       de: 'Dualer Informatikstudent (IT-Operations)',

@@ -87,3 +87,13 @@ body {
 [id] {
   scroll-margin-top: 1.5rem;
 }
+
+@media print {
+  body {
+    background: white;
+  }
+
+  .cv-footer {
+    display: none;
+  }
+}

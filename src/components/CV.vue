@@ -157,6 +157,19 @@
         </article>
       </section>
 
+      <section class="cv-section" aria-labelledby="languages-heading">
+        <h2 id="languages-heading" class="cv-heading">
+          <IconGlyph name="website" class="text-accent-400 size-4" />
+          {{ localize(cvLabels.languages) }}
+        </h2>
+        <dl class="grid gap-2 sm:grid-cols-2">
+          <div v-for="language in languages" :key="language.name.en">
+            <dt class="text-cream-100 font-semibold">{{ localize(language.name) }}</dt>
+            <dd class="text-cream-500 text-sm">{{ localize(language.level) }}</dd>
+          </div>
+        </dl>
+      </section>
+
       <section class="cv-section" aria-labelledby="skills-heading">
         <h2 id="skills-heading" class="cv-heading">
           <IconGlyph name="skills" class="text-accent-400 size-4" />
@@ -198,6 +211,19 @@ const selectedProjects = computed(() =>
     .map((id) => projects.find((project) => project.id === id))
     .filter((project): project is ProjectEntry => project !== undefined),
 );
+const languages = [
+  {
+    name: { en: 'German', de: 'Deutsch' },
+    level: {
+      en: 'Native / Professional proficiency (C2)',
+      de: 'Muttersprache / Verhandlungssicher (C2)',
+    },
+  },
+  {
+    name: { en: 'English', de: 'Englisch' },
+    level: { en: 'Fluent in speaking and writing (B2)', de: 'Fließend in Wort und Schrift (B2)' },
+  },
+];
 
 const skills = computed(() => {
   const allSkills = [

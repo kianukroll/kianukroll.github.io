@@ -10,6 +10,7 @@ export const cvLabels = {
     en: 'Education and certifications',
     de: 'Ausbildung und Zertifikate',
   },
+  languages: { en: 'Languages', de: 'Sprachkenntnisse' },
   skills: { en: 'Technical skills', de: 'Technische Kenntnisse' },
 } satisfies Record<string, LocalizedText>;
 

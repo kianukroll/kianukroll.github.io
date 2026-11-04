@@ -12,9 +12,10 @@ export const profile: ProfileData = {
   },
   location: {
     en: 'Brandenburg / Berlin Area, Germany',
-    de: 'Brandenburg / Raum Berlin, Deutschland',
+    de: 'Raum Brandenburg / Berlin, Deutschland',
   },
   email: 'kianukroll03@gmail.com',
+  websiteUrl: 'https://kianukroll.com/',
   githubUrl: 'https://github.com/kianukroll',
   linkedinUrl: 'https://www.linkedin.com/in/kianukroll/',
 };

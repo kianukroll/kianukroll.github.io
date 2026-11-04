@@ -16,10 +16,14 @@
         <p class="text-cream-300 mt-2 font-serif text-xl">{{ localize(selectedVariant.title) }}</p>
         <address class="text-cream-500 mt-4 flex flex-wrap gap-x-4 gap-y-1 text-sm not-italic">
           <span>{{ localize(profile.location) }}</span>
-          <span class="inline-flex items-center gap-1">
+          <a :href="profile.websiteUrl" class="inline-flex items-center gap-1">
+            <IconGlyph name="website" class="size-4" />
+            kianukroll.com
+          </a>
+          <a :href="`mailto:${profile.email}`" class="inline-flex items-center gap-1">
             <IconGlyph name="email" class="size-4" />
             {{ profile.email }}
-          </span>
+          </a>
           <a
             :href="profile.linkedinUrl"
             target="_blank"
@@ -210,6 +214,11 @@ const skills = computed(() => {
 </script>
 
 <style scoped>
+@page {
+  size: A4;
+  margin: 0;
+}
+
 .cv-section {
   break-inside: avoid;
   margin-top: 2rem;
@@ -231,17 +240,16 @@ const skills = computed(() => {
 
 @media print {
   .cv-page {
-    background: white;
-    color: #0f172a;
+    background: var(--color-navy-900);
+    color: var(--color-cream-300);
     font-size: 10.5pt;
+    min-height: auto;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
   }
 
-  .cv-page :deep(.text-cream-100),
-  .cv-page :deep(.text-cream-300),
-  .cv-page :deep(.text-cream-500),
-  .cv-page :deep(.text-accent-300),
-  .cv-page :deep(.text-accent-400) {
-    color: #0f172a;
+  .cv-page > div {
+    padding: 1.25cm 1.5cm;
   }
 
   .cv-section {
@@ -249,13 +257,15 @@ const skills = computed(() => {
   }
 
   .cv-heading {
-    border-color: #cbd5e1;
-    color: #0f172a;
+    border-color: var(--color-hairline);
+    color: var(--color-cream-100);
   }
 
   a {
-    color: inherit;
-    text-decoration: none;
+    color: var(--color-cream-100);
+    text-decoration: underline;
+    text-decoration-thickness: 0.06em;
+    text-underline-offset: 0.15em;
   }
 }
 </style>

@@ -40,6 +40,7 @@ export interface ProfileData {
   motto: LocalizedText;
   location: LocalizedText;
   email: string;
+  websiteUrl: string;
   githubUrl: string;
   linkedinUrl: string;
 }

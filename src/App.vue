@@ -23,8 +23,8 @@
     <PrivacyPolicy v-else-if="currentPage === 'privacy'" />
     <CV v-else :variant-id="cvVariantId" />
     <div
+      v-if="currentPage !== 'cv'"
       class="mx-auto max-w-3xl px-6 sm:px-10 lg:px-16"
-      :class="{ 'print:hidden': currentPage === 'cv' }"
     >
       <TheFooter />
     </div>

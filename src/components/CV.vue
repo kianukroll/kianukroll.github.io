@@ -220,8 +220,13 @@ const skills = computed(() => {
 }
 
 .cv-section {
-  break-inside: avoid;
+  break-inside: auto;
   margin-top: 2rem;
+}
+
+.cv-section article {
+  break-inside: avoid;
+  page-break-inside: avoid;
 }
 
 .cv-heading {
@@ -240,32 +245,80 @@ const skills = computed(() => {
 
 @media print {
   .cv-page {
-    background: var(--color-navy-900);
-    color: var(--color-cream-300);
+    background: white;
+    color: #1f2937;
     font-size: 10.5pt;
     min-height: auto;
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
   }
 
+  .cv-page :deep(.text-cream-100),
+  .cv-page :deep(.text-cream-300) {
+    color: #1f2937;
+  }
+
+  .cv-page :deep(.text-cream-500) {
+    color: #6b7280;
+  }
+
+  .cv-page :deep(.text-accent-300) {
+    color: #4b5563;
+  }
+
+  .cv-page :deep(.text-accent-400) {
+    color: #374151;
+  }
+
   .cv-page > div {
-    padding: 1.25cm 1.5cm;
+    padding: 0 1.5cm 1.25cm;
+  }
+
+  .cv-page h1 {
+    margin-top: 0;
   }
 
   .cv-section {
     margin-top: 1.25rem;
   }
 
+  .cv-section article > h3 {
+    break-after: avoid-page;
+  }
+
+  .cv-page :deep(.tech-badge) {
+    background: #f3f4f6;
+    border-color: #9ca3af;
+    color: #374151;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .cv-page section:last-child ul {
+    gap: 0.3rem;
+  }
+
   .cv-heading {
-    border-color: var(--color-hairline);
-    color: var(--color-cream-100);
+    border-color: #cbd5e1;
+    color: #1f2937;
   }
 
   a {
-    color: var(--color-cream-100);
+    color: #374151;
     text-decoration: underline;
     text-decoration-thickness: 0.06em;
     text-underline-offset: 0.15em;
+  }
+
+  address a {
+    color: #4b5563;
+  }
+
+  .cv-page article a {
+    color: #374151;
+  }
+
+  .cv-page header {
+    border-color: #4b5563;
   }
 }
 </style>
